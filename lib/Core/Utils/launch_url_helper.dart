@@ -1,12 +1,13 @@
 import 'package:url_launcher/url_launcher.dart';
 
 class LaunchUrlHelper {
-  LaunchUrlHelper._();
   // Singleton instance
   static final LaunchUrlHelper _instance = LaunchUrlHelper._();
 
   // Factory method to get the singleton instance
   factory LaunchUrlHelper() => _instance;
+
+  LaunchUrlHelper._(); // private constarctor
 
   // Method to check if a string contains Arabic characters
 
