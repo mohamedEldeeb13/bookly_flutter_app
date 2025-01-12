@@ -1,4 +1,5 @@
 import 'package:bookly_flutter_app/Core/Utils/app_router.dart';
+import 'package:bookly_flutter_app/Core/Utils/cubits_observer.dart';
 import 'package:bookly_flutter_app/Core/Utils/service_locator.dart';
 import 'package:bookly_flutter_app/Features/Home/Data/Repo/home_repo.dart';
 import 'package:bookly_flutter_app/Features/Home/Presentation/ViewModel/FeaturedBooksCubit/featured_books_cubit.dart';
@@ -10,7 +11,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setupGetIt();
+  Bloc.observer = CubitsObserver();
+  setupGetIt();
   runApp(const BooklyApp());
 }
 
