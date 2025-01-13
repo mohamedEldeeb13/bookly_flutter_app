@@ -1,26 +1,41 @@
-import 'package:bookly_flutter_app/constant.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
-  static const textStyle18 = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
-  );
-  static const textStyle20 =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
-  static const textStyle30 = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.w900,
-    fontFamily: kGtSectraFine,
-    letterSpacing: 1.2,
-  );
-  static const textStyle14 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-  );
+  /// Default text style based on theme
+  static TextStyle defaultStyle(BuildContext context) {
+    return TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+      color: Theme.of(context).textTheme.bodyLarge?.color, // Updated
+    );
+  }
 
-  static const textStyle16 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle textStyle14(BuildContext context) {
+    return defaultStyle(context)
+        .copyWith(fontSize: 14, fontWeight: FontWeight.normal);
+  }
+
+  /// Predefined styles
+  static TextStyle textStyle18(BuildContext context) {
+    return defaultStyle(context)
+        .copyWith(fontSize: 18, fontWeight: FontWeight.w600);
+  }
+
+  static TextStyle textStyle20(BuildContext context) {
+    return defaultStyle(context)
+        .copyWith(fontSize: 20, fontWeight: FontWeight.normal);
+  }
+
+  static TextStyle textStyle30(BuildContext context) {
+    return defaultStyle(context).copyWith(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1.2,
+    );
+  }
+
+  /// Utility to copy and modify a style
+  static TextStyle changeColor(TextStyle style, Color color) {
+    return style.copyWith(color: color);
+  }
 }

@@ -23,7 +23,8 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         Text(
           book.volumeInfo?.title ?? '',
-          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+          style:
+              Styles.textStyle30(context).copyWith(fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -33,7 +34,7 @@ class BooksDetailsSection extends StatelessWidget {
           opacity: 0.7,
           child: Text(
             book.volumeInfo?.authors?[0] ?? '',
-            style: Styles.textStyle20.copyWith(
+            style: Styles.textStyle20(context).copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
             ),

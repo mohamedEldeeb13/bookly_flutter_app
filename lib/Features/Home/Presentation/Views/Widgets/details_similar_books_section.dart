@@ -13,7 +13,8 @@ class DetailsSimilarBooksSection extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             "You can also like",
-            style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
+            style: Styles.textStyle14(context)
+                .copyWith(fontWeight: FontWeight.w600),
           ),
         ),
         const SizedBox(

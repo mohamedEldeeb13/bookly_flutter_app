@@ -35,7 +35,7 @@ class BookListViewItem extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
                       book.volumeInfo?.title ?? '',
-                      style: Styles.textStyle20
+                      style: Styles.textStyle20(context)
                           .copyWith(fontFamily: kGtSectraFine),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -48,7 +48,7 @@ class BookListViewItem extends StatelessWidget {
                     opacity: 0.7,
                     child: Text(
                       book.volumeInfo?.authors?[0] ?? '',
-                      style: Styles.textStyle14,
+                      style: Styles.textStyle14(context),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -61,7 +61,7 @@ class BookListViewItem extends StatelessWidget {
                     children: [
                       Text(
                         "Free",
-                        style: Styles.textStyle20
+                        style: Styles.textStyle20(context)
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       BookRating(
